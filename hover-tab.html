@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+
+body {
+  padding: 3rem 4rem;
+}
+.nav {
+  margin-bottom: 1.5rem;
+}
+
+  </style>
+</head>
+<body>
+<!-- Nav pills -->
+<ul class="nav nav-pills">
+  <li class="active"><a href="#tab-1" data-toggle="tab" class="particular-tab">Tab 1</a></li>
+  <li><a href="#tab-2" data-toggle="tab" class="particular-tab">Tab 2</a></li>
+  <li><a href="#tab-3" data-toggle="tab" class="particular-tab">Tab 3</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content well">
+  <div class="tab-pane active" id="tab-1">Content 1</div>
+  <div class="tab-pane" id="tab-2">Content 2</div>
+  <div class="tab-pane" id="tab-3">Content 3</div>
+  <div class="tab-pane" id="tab-4">Content 4</div>
+</div>
+</body>
+
+<script>
+
+(function ($) {
+	  $(function () {
+	    $(document).off('click.bs.tab.data-api', '.particular-tab');
+	    $(document).on('mouseenter.bs.tab.data-api', '[data-toggle="tab"], [data-hover="tab"]', function () {
+	      $(this).tab('show');
+	    });
+	  });
+	})(jQuery);
+
+</script>
+</html>

@@ -1,0 +1,167 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+        <script type="text/javascript">
+          
+
+            window.onload=function() {
+                imgCont = document.getElementById('imgBanner');
+                imgCont2 = document.getElementById('imgBanner2');
+			    imgCont3 = document.getElementById('imgBanner3');
+                imgCont4 = document.getElementById('imgBanner4');
+                imgCont5 = document.getElementById('imgBanner5');
+                imgCont6 = document.getElementById('imgBanner6');
+			    imgCont7 = document.getElementById('imgBanner7');
+                imgCont8 = document.getElementById('imgBanner8');
+                swapImage();
+                swapImage2();
+                swapImage3();
+                swapImage4();
+                swapImage5();
+                swapImage6();
+                swapImage7();
+                swapImage8();
+            }
+            
+            var picPaths = ['Pankaj.jpg','Shyam.jpg','Divyanshi.jpg'];
+            var curPic = -1;
+            //preload the images for smooth animation
+            var imgO = new Array();
+            for(i=0; i < picPaths.length; i++) {
+                imgO[i] = new Image();
+                imgO[i].src = picPaths[i];
+            }
+
+            function swapImage() {
+                curPic = (++curPic > picPaths.length-1)? 0 : curPic;
+                imgCont.src = imgO[curPic].src;
+                setTimeout(swapImage,2000);
+            }
+            
+            var picPaths2 = ['Divyanshi.jpg','Suraj.jpg','Tushar.jpg'];
+            var curPic2 = -1;
+            //preload the images for smooth animation
+            var img2 = new Array();
+            for(i=0; i < picPaths2.length; i++) {
+                img2[i] = new Image();
+                img2[i].src = picPaths2[i];
+            }
+
+            function swapImage2() {
+                curPic2 = (++curPic2 > picPaths2.length-1)? 0 : curPic2;
+                imgCont2.src = img2[curPic2].src;
+                setTimeout(swapImage2,2000);
+            }
+           
+            var picPaths3 = ['Naveen.jpg','Tushar.jpg','Shivendra.jpg'];
+            var curPic3 = -1;
+            //preload the images for smooth animation
+            var img3 = new Array();
+            for(i=0; i < picPaths3.length; i++) {
+                img3[i] = new Image();
+                img3[i].src = picPaths3[i];
+            }
+
+            function swapImage3() {
+                curPic3 = (++curPic3 > picPaths3.length-1)? 0 : curPic3;
+                imgCont3.src = img3[curPic3].src;
+                setTimeout(swapImage3,2000);
+            }
+            
+            var picPaths4 = ['Utkarsha.jpg','Prakhar.jpg','Ajinkya.jpg'];
+            var curPic4 = -1;
+            //preload the images for smooth animation
+            var img4 = new Array();
+            for(i=0; i < picPaths4.length; i++) {
+                img4[i] = new Image();
+                img4[i].src = picPaths4[i];
+            }
+
+            function swapImage4() {
+                curPic4 = (++curPic4 > picPaths4.length-1)? 0 : curPic4;
+                imgCont4.src = img4[curPic4].src;
+                setTimeout(swapImage4,2000);
+            }
+            
+            var picPaths5 = ['Prakhar.jpg','Priyanka.jpg','Pankaj.jpg'];
+            var curPic5 = -1;
+            //preload the images for smooth animation
+            var img5 = new Array();
+            for(i=0; i < picPaths5.length; i++) {
+                img5[i] = new Image();
+                img5[i].src = picPaths5[i];
+            }
+
+            function swapImage5() {
+                curPic5 = (++curPic5 > picPaths5.length-1)? 0 : curPic5;
+                imgCont5.src = img5[curPic5].src;
+                setTimeout(swapImage5,2000);
+            }
+           
+            var picPaths6 = ['Shivendra.jpg','Naveen.jpg','Saquib.jpg'];
+            var curPic6 = -1;
+            //preload the images for smooth animation
+            var img6 = new Array();
+            for(i=0; i < picPaths6.length; i++) {
+                img6[i] = new Image();
+                img6[i].src = picPaths6[i];
+            }
+
+            function swapImage6() {
+                curPic6 = (++curPic6 > picPaths6.length-1)? 0 : curPic6;
+                imgCont6.src = img6[curPic6].src;
+                setTimeout(swapImage6,2000);
+            }
+            
+            var picPaths7 = ['Saquib.jpg','Utkarsha.jpg','Suraj.jpg'];
+            var curPic7 = -1;
+            //preload the images for smooth animation
+            var img7 = new Array();
+            for(i=0; i < picPaths7.length; i++) {
+                img7[i] = new Image();
+                img7[i].src = picPaths7[i];
+            }
+
+            function swapImage7() {
+                curPic7 = (++curPic7 > picPaths7.length-1)? 0 : curPic7;
+                imgCont7.src = img7[curPic7].src;
+                setTimeout(swapImage7,2000);
+            }
+            
+            var picPaths8 = ['Priyanka.jpg','Ajinkya.jpg','Shyam.jpg'];
+            var curPic8 = -1;
+            //preload the images for smooth animation
+            var img8 = new Array();
+            for(i=0; i < picPaths8.length; i++) {
+                img8[i] = new Image();
+                img8[i].src = picPaths8[i];
+            }
+
+            function swapImage8() {
+                curPic8 = (++curPic8 > picPaths8.length-1)? 0 : curPic8;
+                imgCont8.src = img8[curPic8].src;
+                setTimeout(swapImage8,2000);
+            }
+            
+        </script>
+
+    </head>
+    <body>
+
+        <div>
+            <img id="imgBanner" src="" alt="" />
+            <img id="imgBanner2" src="" alt="" />
+            <img id="imgBanner3" src=" " alt="" />
+            <img id="imgBanner4" src="" alt="" />
+            <img id="imgBanner5" src="" alt="" />
+            <img id="imgBanner6" src="" alt="" />
+            <img id="imgBanner7" src="" alt="" />
+            <img id="imgBanner8" src=" " alt="" />
+        </div>
+
+    </body>
+</html>

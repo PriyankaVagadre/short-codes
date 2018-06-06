@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>jQuery get all input Values example</title>
+
+<link
+ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+ rel="stylesheet" type="text/css" />
+
+<script
+ src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
+ type="text/javascript"></script>
+<script
+ src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
+ type="text/javascript"></script>
+<script type="text/javascript">
+ $(document).ready(function() {
+     $('#myButton1').click(function() {
+       
+      $("#myResults").html("");
+      
+      $(':input').each(function(index){
+    console.log($(this));
+    $("#myResults")
+     .append("<b>Input Type:</b> " 
+       + $(this).attr('type') + " ");
+    $("#myResults")
+     .append("<b>Value:</b> " 
+       + $(this).attr('value') + "<br/>"); 
+   }); 
+     });
+     
+     $('#myButton2').click(function() {
+      
+      $("#myResults").html("");
+      
+      $('input:text').each(function(index){
+    console.log($(this));
+    $("#myResults")
+     .append("<b>Input Type:</b> " 
+       + $(this).attr('type') + " ");
+    $("#myResults")
+     .append("<b>Value:</b> " 
+       + $(this).attr('value') + "<br/>"); 
+   }); 
+     });
+     
+ });     
+    </script>
+</head>
+<body>
+<div id="myExample">
+ <form id="myForm" action="">
+  <fieldset>
+   <legend>jQuery Get values for all input types</legend>
+
+   <p>
+    <label for="myInputText1">
+     My first input text is here:
+    </label><br /> 
+    <input
+     id="myInputText1" type="text" name="inputBox" />
+   </p>
+   <p>
+    <label for="myInputText2">
+     My second input text is here:
+    </label><br /> 
+    <input
+     id="myInputText1" type="text" name="inputBox" />
+   </p>
+   <p>
+    <label for="myInputText3">
+     My hidden input is here:
+    </label><br /> 
+    <input
+     id="myInputText1" type="hidden" 
+     name="inputBox" value="My Hidden Data"/>
+   </p>
+   <input id="myButton1" type="button"
+     value="Click here to see all input Types" />
+   <input id="myButton2" type="button"
+     value="Click here to see only input Type=Text" />  
+  </fieldset>
+  <fieldset>
+   <legend>See Result in this Section:</legend>
+   <div id="myResults"></div>
+  </fieldset>
+ </form>
+</div>
+</body>
+</html>

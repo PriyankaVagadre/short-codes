@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/smartscroll.css">
+	<link rel="stylesheet" href="../css/example.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<style>
+	body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+body{
+    margin: 0px;
+    background: #000;
+}
+#main {
+    transition: margin-left .5s;
+    transition: margin-top .5s;
+    padding: 0px;
+    margin: 0px;
+    background: #fff;
+    height: 900px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+	<div>
+		<div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="#">About</a>
+	  <a href="#">Services</a>
+	  <a href="#">Clients</a>
+	  <a href="#">Contact</a>
+	</div>
+	</div>
+	
+	
+	<div class="section-wrapper" id="main">
+		<div class="section" data-hash="scrollbar">
+			<div>
+				  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+				<h1>Compatible with scrollbar</h1>
+				<p>Try scrolling with the mouse wheel as well as the scrollbar, it works as you expect!</p>
+			</div>
+		</div>
+		<div class="section" data-hash="permalinks">
+			<div>
+				<h1>Permalink</h1>
+				<p>You can bookmark a particular section, and it will stay there when you return!</p>
+				<a href="http://d4nyll.github.io/smartscroll/permalink/#c">Demo</a>
+			</div>
+		</div>
+		<div class="section" data-hash="permalinks">
+			<div>
+				<h1>Different Heights</h1>
+				<p>Normally, your sections will have to be 100% of the viewport (like it is now) for it to work. With smartscroll, the section can all be of different heights!</p>
+				<a href="http://d4nyll.github.io/smartscroll/different-heights/">Demo</a>
+			</div>
+		</div>
+		<div class="section" data-hash="permalinks">
+			<div>
+				<h1>Hybrid Scroll</h1>
+				<p>You can scroll normally in the white areas above, and also by sections in these coloured areas!</p>
+				<a href="http://d4nyll.github.io/smartscroll/hybrid-scroll/">Demo</a>
+			</div>
+		</div>
+		<div class="section" data-hash="permalinks">
+			<div>
+				<h1>Auto-Hash</h1>
+				<p>Noticed when you scrolled down, the URL's hash changes automatically? That's the auto-hash feature! You can enable it just by itself!</p>
+				<a href="http://d4nyll.github.io/smartscroll/auto-hash/">Demo</a>
+			</div>
+		</div>
+		<div class="section" data-hash="keep-history">
+			<div>
+				<h1>Keep History</h1>
+				<p>By default, scrolling through different sections does not add to your history, but if you like that feature, you can turn it on too!</p>
+				<a href="http://d4nyll.github.io/smartscroll/keep-history/">Demo</a>
+			</div>
+		</div>
+		<div class="section" data-hash="permalinks">
+			<div>
+				<h1>Responsive</h1>
+				<p>You can disable section scrolling for windows below a certain width. Do not confuse this with touch devices, where scrolljacking is disabled by design.</p>
+				<a href="http://d4nyll.github.io/smartscroll/responsive/">Demo</a>
+			</div>
+		</div>
+	</div>
+	<script src="https://rawgit.com/Olical/EventEmitter/master/EventEmitter.min.js"></script>
+	<script type="text/javascript" src="../js/bower_components/lethargy/lethargy.min.js"></script>
+	<script type="text/javascript" src="../js/smartscroll.js"></script>
+	<script>
+		var ee = new EventEmitter();
+		var scrollStartListener = function (slideNumber) {
+			console.log("Scrolling to " + slideNumber);
+		}
+		var scrollEndListener = function (slideNumber) {
+			console.log("Scrolling End. Now at section " + slideNumber);
+		}
+		ee.addListener('scrollStart', scrollStartListener);
+		ee.addListener('scrollEnd', scrollEndListener);
+		var smartscroll = $.smartscroll({
+			sectionWrapperSelector: ".section-wrapper",
+			sectionClass: "section",
+			headerHash: "welcome",
+			eventEmitter: ee
+		});
+		console.log(smartscroll);
+	</script>
+	<script>
+	function openNav() {
+	    document.getElementById("mySidenav").style.width = "250px";
+	    document.getElementById("main").style.marginLeft = "250px";
+	     document.getElementById("main").style.marginTop = "150px";
+	}
+
+	function closeNav() {
+	    document.getElementById("mySidenav").style.width = "0";
+	    document.getElementById("main").style.marginLeft= "0";
+	     document.getElementById("main").style.marginTop= "0";
+	}
+	</script>
+</body>
+</html>

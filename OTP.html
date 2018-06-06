@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+fieldset{
+    border:5px solid #efefef;
+    border-radius:5px;
+}
+legend{
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+dt {
+    float: left;
+    font-size: 14px;
+    width: 25%;
+}
+dd{
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 50%;
+}
+label{
+    font-weight:bold;
+    color:#555;
+}
+
+</style>
+</head>
+<body>
+<fieldset>
+    <legend>We Call You Back</legend>
+    <dt>
+        <label>
+            Your Phone:
+        </label>
+    </dt>
+    <div class="dd">
+        <input id="phone1" class="phone" name="phone1" type="text" size="1" value=""/>
+        <input id="phone2" class="phone" name="phone2" type="text" size="1" value=""/>
+        <input id="phone3" class="phone" name="phone3" type="text" size="1" value=""/>
+        
+        <input id="phone4" class="phone" name="phone4" type="text" size="1" value=""/>
+        <input id="phone5" class="phone" name="phone5" type="text" size="1" value=""/>
+    </div>
+    <dt>
+        <label>
+            &nbsp;
+        </label>
+    </dt>        
+    <dd>
+        <input type="hidden" name="finalphone" id="finalphone" value="" />
+        <input name="mybutton" type="button" id="mybutton" value="Click to View Entered Number!"/>
+    </dd>
+</fieldset>
+
+<script>
+$('#mybutton').attr('disabled', 'disabled');  
+
+$('.phone').keypress(function(event){   
+
+    // stop entering characters and backspace
+    if(event.which != 8 && isNaN(String.fromCharCode(event.which))){
+        event.preventDefault();
+    }  
+   
+    // get input values and length of the values
+
+    var phone_aval = $('#phone1').val().length;
+    var phone_bval = $('#phone2').val().length;
+    var phone_cval = $('#phone3').val().length;
+    var phone_dval = $('#phone4').val().length;
+    var phone_eval = $('#phone5').val().length;
+       
+    // focus cursor to next when 3 digit entered
+    if ( phone_aval == 0 ) {
+        $(this).next('input:text').focus();
+    }
+    // focus cursor to next when 3 digit entered
+     else if ( phone_bval == 0 ) {
+        $(this).next('input:text').focus();
+    }
+    // button enabled when 4 digit entered to the last area
+    else if ( phone_cval == 1 ) {
+    	$(this).next('input:text').focus();
+        
+    }
+    else if ( phone_dval == 1 ) {
+    	$(this).next('input:text').focus();
+        
+    }
+    else if ( phone_eval == 1 ) {
+     	$(this).next('input:text').focus();
+        
+    }
+    else if ( phone_eval == 1 ) {
+     	$(this).next('input:text').focus();
+        
+    }
+    else {
+        $("#mybutton").attr("disabled", "disabled");
+        $("#mybutton").removeAttr("disabled");
+        $('#mybutton').focus();
+    }
+
+});
+
+// view the completed number
+
+$('#mybutton').click(function(){
+    var phone_aval = $('#phone1').val();
+    var phone_bval = $('#phone2').val();
+    var phone_cval = $('#phone3').val();
+
+    var phone_bval = $('#phone4').val();
+    var phone_cval = $('#phone5').val();
+    alert('Your Phone is : \n'+phone_aval+'-'+phone_bval+'-'+phone_cval);
+});
+</script>
+     
+</body>
+</html> 

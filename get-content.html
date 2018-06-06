@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Show Message For Five Seconds</title>
+    </head>
+    <body class="body">
+        <!--Our div is hidden by default-->
+        <h1>hello1</h1>
+        <h2>hello2</h2>
+        <h1>main-heading </h1>
+        
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        
+        <script>
+        
+        $(document).ready(function(){
+            var $temp = $('h1').html();
+            alert($temp);
+            $('.body').text($($temp).val());
+
+        });
+
+        </script>
+    </body>
+</html>

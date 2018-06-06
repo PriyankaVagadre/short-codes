@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+  .fake-div{
+  height:1000px;
+  }
+  </style>
+ </head>
+ <body>
+ <div class="fake-div"></div>
+ <div class="white-box2" id="count-div">
+                    <h4><span class="count" data-count="300">200</span> +</h4>
+                    <h5>Service Providers</h5>
+                        <h4><span class="count" data-count="2000">200</span> +</h4>
+                    <h5>Service Providers</h5>
+                        <h4><span class="count" data-count="500">200</span> +</h4>
+                    <h5>Service Providers</h5>
+                </div>
+
+ </body>
+ <script>
+     var a = 0;
+     $(window).scroll(function() {
+
+       var oTop = $('#count-div').offset().top - window.innerHeight;
+       if (a == 0 && $(window).scrollTop() > oTop) {
+         $('.count').each(function() {
+           var $this = $(this),
+             countTo = $this.attr('data-count');
+           $({
+             countNum: $this.text()
+           }).animate({
+               countNum: countTo
+             },
+
+             {
+
+               duration: 2000,
+               easing: 'swing',
+               step: function() {
+                 $this.text(Math.floor(this.countNum));
+               },
+               complete: function() {
+                 $this.text(this.countNum);
+                 //alert('finished');
+               }
+
+             });
+         });
+         a = 1;
+       }
+
+     });
+</script>
+</html>
