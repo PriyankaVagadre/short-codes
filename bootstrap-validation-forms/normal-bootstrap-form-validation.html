@@ -1,0 +1,69 @@
+<html lang="en">
+    <head>
+        <title>
+            Bootstrap Validation example using validator.js
+        </title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"></link>
+        <script src="https://code.jquery.com/jquery-1.12.4.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js">
+        </script>
+    </head>
+    <body>
+        <br/>
+        <div class="container">
+            <div class="panel panel-primary" style="width:750px;margin:0px auto">
+
+
+              <div class="panel-heading">Bootstrap Validation example using validator.js</div>
+              <div class="panel-body">
+
+
+                <form data-toggle="validator" role="form">
+
+
+                  <div class="form-group">
+                      <label class="control-label" for="inputName">Name</label>
+                      <input class="form-control" data-error="Please enter name field." id="inputName" placeholder="Name"  type="text" required />
+                      <div class="help-block with-errors"></div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label for="inputEmail" class="control-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                    <div class="help-block with-errors"></div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label for="inputPassword" class="control-label">Password</label>
+                    <div class="form-group">
+                      <input type="password" data-minlength="5" class="form-control" id="inputPassword" data-error="must enter minimum of 5 characters" placeholder="Password" required>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                      <label class="control-label" for="inputName">BIO</label>
+                      <textarea class="form-control" data-error="Please enter BIO field." id="inputName" placeholder="Cina Saffary" required=""></textarea>
+                      <div class="help-block with-errors"></div>
+                  </div>
+
+
+                  <div class="form-group">
+                      <button class="btn btn-primary" type="submit">
+                          Submit
+                      </button>
+                  </div>
+                </form>
+
+
+              </div>
+            </div>
+        </div>
+    </body>
+</html>

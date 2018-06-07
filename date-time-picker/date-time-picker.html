@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="date-time-picker.css" rel="stylesheet">
+  <script type="text/javascript" src="datepicker.js"></script>
+</head>
+<body>
+<div class="selectdate">
+        <div class="form-group">
+                <div class="input-group slt-date">
+                     <div id="sandbox-container">
+                        <input type="text" type="text" class="form-control date-place" placeholder="SELECT DATE"/>
+                    </div>
+                </div>
+            </div>
+       </div>
+</body>
+<script>
+$('#sandbox-container input').datepicker({
+    autoclose: true
+});
+
+$('#sandbox-container input').on('show', function(e){
+    console.debug('show', e.date, $(this).data('stickyDate'));
+    
+    if ( e.date ) {
+         $(this).data('stickyDate', e.date);
+    }
+    else {
+         $(this).data('stickyDate', null);
+    }
+});
+
+$('#sandbox-container input').on('hide', function(e){
+    console.debug('hide', e.date, $(this).data('stickyDate'));
+    var stickyDate = $(this).data('stickyDate');
+    
+    if ( !e.date && stickyDate ) {
+        console.debug('restore stickyDate', stickyDate);
+        $(this).datepicker('setDate', stickyDate);
+        $(this).data('stickyDate', null);
+    }
+});
+</script>
+</html>
